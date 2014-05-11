@@ -1,7 +1,7 @@
 #### Exploratory Data Analysis ## May 2014 ####
 ##### Course Project ## Adriana Dominguez #####
 ################### Plot 4 ####################
-
+#png(filename = "plot4.png", width = 480, height = 480)
 ## For some reason, my graph axes were in Spanish, so with a little 
 ## investigation, I discovered that I have to add these two lines
 ## to change them to English.
@@ -54,7 +54,6 @@ powerData$DateTime <- strptime(paste(powerData$Date, powerData$Time),
 	 format="%d/%m/%Y %H:%M:%S")
 
 ##### Plot 4
-png(filename = "plot4.png", width = 480, height = 480)
 par(mfrow=c(2,2))
 ## Plot 1,1
 powerData$DateTime <- strptime(paste(powerData$Date, powerData$Time), format="%d/%m/%Y %H:%M:%S")
@@ -78,5 +77,9 @@ plot(powerData$DateTime,powerData$Global_reactive_power,type="l",xlab="datetime"
 par(mar=c(5,5,2,2))
 
 ## Save the plot to a PNG file
+# I put two types because I don't know what weird thing happend last minute
+# in order to adjust the size of the text of the legend in the bottom left
+# graph.
+dev.copy(png, file = "plot4.png")
 dev.off()
 
