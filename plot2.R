@@ -55,8 +55,7 @@ powerData$DateTime <- strptime(paste(powerData$Date, powerData$Time),
 
 ##### Plot 2
 ## We make a line plot of the data with the corresponding axes names.
-plot(powerData$DateTime,powerData$Global_active_power,type="l",ylab="Global Active Power 
-	(kilowatts)",xlab="")
+plot(powerData$DateTime,powerData$Global_active_power,type="l",ylab="Global Active Power (kilowatts)",xlab="")
 par(mar=c(2,8,2,2)) # This is so that the y axis name will show  up completely
 dev.copy(png, file = "plot2.png")
 dev.off()
